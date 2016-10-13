@@ -1,0 +1,31 @@
+.as-items
+  &--navigator
+    .as-items__list, .as-items__chunk
+      padding-left: 20px
+
+.as-item
+  position: relative
+  margin: 4px 0
+
+  label
+    cursor: pointer
+
+  input
+    display: none
+
+  &__navigator
+    display: none
+
+  &__content
+    cursor: pointer
+    display: inline-block
+
+  &--navigator
+    .as-item__navigator
+      display: block
+      position: absolute
+      top: 0
+      left: -20px
+
+  &--selected
+    font-weight: 600
