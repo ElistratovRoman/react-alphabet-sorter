@@ -1,4 +1,4 @@
-# react-alphabetical-sorter
+# react-alphabet-sorter
 Reactjs component for alphabetical sorting.
 
 #Example
