@@ -1,6 +1,6 @@
 {
   "name": "react-alphabet-sorter",
-  "version": "1.0.0",
+  "version": "1.0.0-rc1",
   "description": "React.js component for alphabetical sorting.",
   "main": "./dist/index.js",
   "repository": {

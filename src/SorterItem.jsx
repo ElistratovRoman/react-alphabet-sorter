@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React from 'react'
 import cn from 'classnames'
 
 
-export default class SorterItem extends Component {
+export default class SorterItem extends React.Component {
   render () {
     let label = this.props.item[this.props.labelKey]
 

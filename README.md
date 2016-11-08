@@ -5,14 +5,16 @@ Reactjs component for alphabetical sorting.
 TODO...
 
 #Install
-TODO...
+```javascript
+npm install react-alphabet-sorter --save
+```
 
 # Usage
 Sorter takes an array of values, wich passed in "asGroup" option and sort their by label.
 
 ```javascript
 import React from 'react'
-import AlpabeticalSorter from 'react-alphabetical-sorter'
+import AlpabetSorter from 'react-alphabet-sorter'
 
 const data = [
   { value: 1, label: 'Audi'},
@@ -34,7 +36,7 @@ export default class Demo extends React.Component {
       <div>
         <h2>Simple list</h2>
 
-        <AlpabeticalSorter
+        <AlpabetSorter
           asGroup={data}
           asName='usage_example'
           type='radio'

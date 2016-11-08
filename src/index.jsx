@@ -1,11 +1,11 @@
-import React, {Component, PropTypes} from 'react'
+import React from 'react'
 import cn from 'classnames'
 import SorterItem from './SorterItem.jsx'
 
-import './alphabetical_sorter.sass'
+import './style.sass'
 
 
-export default class AlphabeticalSorter extends Component {
+export default class AlphabetSorter extends React.Component {
   constructor(props) {
     super(props)
 
@@ -15,16 +15,16 @@ export default class AlphabeticalSorter extends Component {
   }
 
   static propTypes = {
-    asGroup     : PropTypes.array.isRequired,
-    selected    : PropTypes.array,
-    asName      : PropTypes.string,
-    type        : PropTypes.string,
-    itemOptions : PropTypes.object,
-    labelKey    : PropTypes.string,
-    valueKey    : PropTypes.string,
-    navigator   : PropTypes.bool,
-    chunkLength : PropTypes.number,
-    handleCheck : PropTypes.func
+    asGroup     : React.PropTypes.array.isRequired,
+    selected    : React.PropTypes.array,
+    asName      : React.PropTypes.string,
+    type        : React.PropTypes.string,
+    itemOptions : React.PropTypes.object,
+    labelKey    : React.PropTypes.string,
+    valueKey    : React.PropTypes.string,
+    navigator   : React.PropTypes.bool,
+    chunkLength : React.PropTypes.number,
+    handleCheck : React.PropTypes.func
   }
 
   static defaultProps = {
