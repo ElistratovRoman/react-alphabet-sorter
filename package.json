@@ -21,8 +21,8 @@
   "scripts": {
     "build-dist": "webpack --bail --config webpack.config.babel.js",
     "start": "babel-node ./dev/server.js",
-    "build-web": "npm run clean-web && webpack --bail --config ./web/webpack.config.babel.js && npm run upd-gh-pages",
-    "upd-gh-pages": "git checkout gh-pages && git checkout master -- web/build/* && git add . && git commit -m 'upd gh-pages' git push && git checkout master",
+    "build-web": "npm run clean-web && webpack --bail --config ./web/webpack.config.babel.js && git add --all && git commit -m 'upd web' && git push && npm run upd-gh-pages",
+    "upd-gh-pages": "git checkout gh-pages && git checkout master -- web/build/* && git add --all && git commit -m 'upd gh-pages' && git push && git checkout master",
     "clean-dist": "rimraf dist",
     "clean-web": "rimraf web/build",
     "lint": "eslint ./src",
