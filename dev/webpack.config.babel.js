@@ -4,16 +4,15 @@ import path from 'path'
 
 module.exports = {
   entry: {
-    demo: [
+    app: [
       'webpack-hot-middleware/client',
-      path.resolve(__dirname, 'index.jsx')
+      path.resolve(__dirname, 'app.jsx')
     ]
   },
 
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: '[name].js',
-    publicPath: '/build/'
+    path: __dirname,
+    filename: 'app.js'
   },
 
   stats: {

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Select from 'react-select'
 import AlpabeticalSorter from '../dist/index'
 
-import './demo.sass'
+import './style.sass'
 import 'react-select/dist/react-select.css'
 
 

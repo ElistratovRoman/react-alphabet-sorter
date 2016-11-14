@@ -19,13 +19,16 @@
     "sort"
   ],
   "scripts": {
-    "bundle-dist": "webpack --bail --config webpack.config.babel.js",
-    "bundle-demo": "babel-node ./demo/server.js",
-    "clean": "rimraf dist",
+    "build-dist": "webpack --bail --config webpack.config.babel.js",
+    "start": "babel-node ./dev/server.js",
+    "build-web": "npm run clean-web && webpack --bail --config ./web/webpack.config.babel.js",
+    "upd-gh-pages": "git checkout gh-pages && git checkout master -- web/build/* && git add . && git commit -m 'upd gh-pages' git push && git checkout master",
+    "clean-dist": "rimraf dist",
+    "clean-web": "rimraf web/build",
     "lint": "eslint ./src",
     "test": "NODE_PATH=. mocha tests/*.js -R spec --compilers js:babel-core/register --require tests/misc/null-compiler.js",
     "test-watch": "npm test -- --watch",
-    "prepublish": "npm run test && npm run clean && npm run bundle-dist"
+    "prepublish": "npm run test && npm run clean-dist && npm run build-dist"
   },
   "devDependencies": {
     "babel-cli": "^6.6.4",
@@ -45,10 +48,14 @@
     "eslint-plugin-babel": "^3.1.0",
     "eslint-plugin-react": "^4.2.3",
     "express": "^4.14.0",
+    "extract-loader": "0.0.2",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
     "jsdom": "^8.5.0",
     "json-loader": "^0.5.4",
     "mocha": "^3.0.2",
     "node-sass": "^3.8.0",
+    "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.3.2",
     "react-hot-loader": "^1.3.0",
     "sass-loader": "^4.0.0",

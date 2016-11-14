@@ -7,6 +7,6 @@
 .babelrc
 .eslintrc
 npm-debug.log
-demo
-scripts
-test
+dev
+web
+tests
