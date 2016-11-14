@@ -2,11 +2,17 @@
 Reactjs component for alphabetical sorting.
 
 #Example
-TODO...
+## In dev mode
+```javascript
+npm i
+npm run start
+```
+## Or see live-demo
+[react-alphabet-sorter](https://elistratovroman.github.io/react-alphabet-sorter/)
 
 #Install
 ```javascript
-npm install react-alphabet-sorter --save
+npm i react-alphabet-sorter --save
 ```
 
 # Usage
