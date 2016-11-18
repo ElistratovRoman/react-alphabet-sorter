@@ -23,12 +23,18 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.css', '.sass']
   },
 
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
+
   module: {
     loaders: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel']
+        loaders: ['babel']
       },
 
       {
@@ -41,10 +47,5 @@ module.exports = {
         loader: 'style-loader!css-loader'
       }
     ]
-  },
-
-  plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ]
+  }
 }

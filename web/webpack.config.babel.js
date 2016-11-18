@@ -12,7 +12,7 @@ module.exports = {
   entry: [path.join(rootDir, '/dev/index.html'), path.join(rootDir, '/dev/app.jsx')],
 
   output: {
-    path: path.join(__dirname, '/build'),
+    path: __dirname,
     filename: 'app.js'
   },
 
@@ -42,5 +42,11 @@ module.exports = {
     ]
   },
 
-  plugins: [ uglifyJs ]
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false }
+    }),
+
+    new webpack.NoErrorsPlugin()
+  ]
 }

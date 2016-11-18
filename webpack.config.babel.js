@@ -44,6 +44,14 @@ module.exports = {
     ]
   },
 
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false }
+    }),
+
+    new webpack.NoErrorsPlugin()
+  ],
+
   sassLoader: {
     includePaths: [path.resolve(__dirname, './src')]
   }

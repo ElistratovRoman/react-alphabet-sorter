@@ -35,16 +35,14 @@ class Demo extends Component {
 
     return (
       <div>
-        <h1>React-alphabetical-sorter demo</h1>
-
-        <div className='demo__navigator-btn' onClick={::this.toggleNavigator}>
+        <div className='navigator-btn' onClick={::this.toggleNavigator}>
           { `Navigator ${navigator ? "disable" : "enable"}` }
         </div>
 
-        <div className='demo__text'>
+        <div className='content-block text'>
           <h2>Simple list</h2>
 
-          <div className='demo__checked-value'>
+          <div className='checked-value'>
             {
               selected.text && selected.text.length
                 ? `You selected: ${selected.text[0].title}`
@@ -62,10 +60,10 @@ class Demo extends Component {
         </div>
 
 
-        <div className='demo__chunk'>
+        <div className='content-block chunk'>
           <h2>Chunks</h2>
 
-          <div className='demo__checked-value'>
+          <div className='checked-value'>
             {
               selected.chunk && selected.chunk.length
                 ? `You selected: ${selected.chunk[0].title}`
@@ -84,10 +82,10 @@ class Demo extends Component {
         </div>
 
 
-        <div className='demo__link'>
+        <div className='content-block link'>
           <h2>Checkbox</h2>
 
-          <div className='demo__checked-value'>
+          <div className='checked-value'>
             {
               selected.checkbox && selected.checkbox.length
                 ? selected.checkbox.reduce((str, item, index) => {
@@ -109,7 +107,7 @@ class Demo extends Component {
         </div>
 
 
-        <div className='demo__link'>
+        <div className='content-block link'>
           <h2>Link</h2>
 
           <AlpabeticalSorter
@@ -122,10 +120,10 @@ class Demo extends Component {
             itemOptions={{target: '_blank'}} />
         </div>
 
-        <div className='demo__searchable'>
+        <div className='content-block searchable'>
           <h2>Single search</h2>
 
-          <div className='demo__searchable__search'>
+          <div className='search'>
             <Select
               placeholder='Search...'
               clearable={false}
@@ -148,10 +146,10 @@ class Demo extends Component {
             handleCheck={(selected) => this.handleSorter('single_search', selected)} />
         </div>
 
-        <div className='demo__searchable'>
+        <div className='content-block searchable'>
           <h2>Multi search</h2>
 
-          <div className='demo__searchable__search'>
+          <div className='search'>
             <Select
               placeholder='Search...'
               clearable={false}
