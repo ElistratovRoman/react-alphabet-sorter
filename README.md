@@ -16,7 +16,7 @@ npm i react-alphabet-sorter --save
 ```
 
 # Usage
-Sorter takes an array of values, wich passed in "asGroup" option and sort their by label.
+Sorter takes an array of values, which are passed in "asGroup" option and sorted by their label.
 
 ```javascript
 import React from 'react'
@@ -61,12 +61,12 @@ export default class Demo extends React.Component {
   Properties |  Type    |  Default  |  Description
 :------------|:---------|:----------|:---------------
   asGroup    |  array   |  []       |  array of data
-  asName     |  string  | 'sorter'  |  value, wich will pass to html attribute "name". Actualy for component with props "radio" and "checkbox"
-  selected   |  array   | []        |  set selected elems after init
-  type       |  string  | 'text'    |  defines component view type and layot. Sorter have 4 type: "radio"(will be render how collection inputs "radio"), "checkbox"(will be render how collection inputs "checkbox"), "link"(will be render how collection links), "text"(will be render how collection text nodes)
-  itemOptions| object   | {}        | object with custom properties, wich will pass in sorter items
-  labelKey   | string   | 'label'   | key, wich use to find item label
-  valueKey   | string   | 'value'   | key, wich use to find item value
+  asName     |  string  | 'sorter'  |  value, which is passed to the html attribute "name" (for component with props "radio" and "checkbox")
+  selected   |  array   | []        |  sets selected elements after init
+  type       |  string  | 'text'    |  defines component view type and layout. Sorter have 4 type: "radio"(will be rendered as collection of input "radio"), "checkbox"(will be rendered as collection of input "checkbox"), "link"(will be rendered as collection of links), "text"(will be rendered as collection of text nodes)
+  itemOptions| object   | {}        | object with custom properties, which is passed to sorter items
+  labelKey   | string   | 'label'   | key, which is used to find item label
+  valueKey   | string   | 'value'   | key, which is used to find item value
   navigator  | boolean  | true      | defines whether to show the alphabetical signs
   chunkLength| number   | undefined | defines whether to show the list items or chunks
-  handleCheck| function | undefined | callback, wich fire after click or change item. Receive 1 argument - array of selected items
+  handleCheck| function | undefined | callback, which fires after click or change item. Receives 1 argument: array of selected items
