@@ -135,7 +135,7 @@ export default class AlphabetSorter extends React.Component {
       }
 
       let last = result[pos][result[pos].length-1]
-      if (!!last && !!sortedArr[i] && last.title.charAt(0).toLowerCase() === sortedArr[i].title.charAt(0).toLowerCase()) {
+      if (!!last && !!sortedArr[i] && last[this.props.labelKey].charAt(0).toLowerCase() === sortedArr[i][this.props.labelKey].charAt(0).toLowerCase()) {
         result[pos].push(sortedArr[i])
       } else if (!!sortedArr[i]) {
         result.push([sortedArr[i]])
