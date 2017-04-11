@@ -1,18 +1,18 @@
 {
-  "name": "react-alphabet-sorter",
+  "name": "strongdm-react-alphabet-sorter",
   "version": "1.0.0-rc1",
-  "description": "React.js component for alphabetical sorting.",
+  "description": "React.js component for alphabetical sorting and alphabetical chunking. Forked from Elistratov Roman's original.",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ElistratovRoman/react-alphabet-sorter"
+    "url": "https://github.com/strongdm/react-alphabet-sorter"
   },
   "author": "Elistratov Roman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ElistratovRoman/react-alphabet-sorter/issues"
+    "url": "https://github.com/strongdm/react-alphabet-sorter/issues"
   },
-  "homepage": "https://github.com/ElistratovRoman/react-alphabet-sorter",
+  "homepage": "https://github.com/strongdm/react-alphabet-sorter",
   "keywords": [
     "react-component",
     "react",
