@@ -15,27 +15,28 @@ export default class AlphabetSorter extends React.Component {
   }
 
   static propTypes = {
-    asGroup     : React.PropTypes.array.isRequired,
-    selected    : React.PropTypes.array,
-    asName      : React.PropTypes.string,
-    type        : React.PropTypes.string,
-    itemOptions : React.PropTypes.object,
-    labelKey    : React.PropTypes.string,
-    valueKey    : React.PropTypes.string,
-    navigator   : React.PropTypes.bool,
-    chunkLength : React.PropTypes.number,
-    handleCheck : React.PropTypes.func
+    asGroup: React.PropTypes.array.isRequired,
+    selected: React.PropTypes.array,
+    asName: React.PropTypes.string,
+    type: React.PropTypes.string,
+    itemOptions: React.PropTypes.object,
+    labelKey: React.PropTypes.string,
+    valueKey: React.PropTypes.string,
+    navigator: React.PropTypes.bool,
+    chunkLength: React.PropTypes.number,
+    chunkByLetter: React.PropTypes.bool,
+    handleCheck: React.PropTypes.func
   }
 
   static defaultProps = {
-    asGroup     : [],
-    selected    : [],
-    asName      : 'sorter',
-    type        : 'text',
-    itemOptions : {},
-    labelKey    : 'label',
-    valueKey    : 'value',
-    navigator   : true
+    asGroup: [],
+    selected: [],
+    asName: 'sorter',
+    type: 'text',
+    itemOptions: {},
+    labelKey: 'label',
+    valueKey: 'value',
+    navigator: true
   }
 
   componentWillReceiveProps(nextProps){
@@ -47,7 +48,7 @@ export default class AlphabetSorter extends React.Component {
   }
 
   render () {
-    let { chunkLength, labelKey, navigator } = this.props
+    let { chunkLength, chunkByLetter, labelKey, navigator } = this.props
     let sorted_arr = [...this.props.asGroup].sort(::this.alphabeticalSort)
 
     let cns = {
@@ -57,10 +58,13 @@ export default class AlphabetSorter extends React.Component {
     if (chunkLength)
       sorted_arr = this.chunkify(sorted_arr, chunkLength)
 
+    if (chunkByLetter)
+      sorted_arr = this.alphaChunk(sorted_arr)
+
     return (
       <div className={cns.items}>
         {
-          !chunkLength
+          !chunkLength && !chunkByLetter
             ? <div className='as-items__list'>
                 { sorted_arr.map((item, index) =>
                     this.buildItem(item, index, this.isNavigator(sorted_arr, index, item))) }
@@ -115,6 +119,28 @@ export default class AlphabetSorter extends React.Component {
       let end = start + chunk_size
       let chunk = arr.slice(start, end)
       result.push(chunk)
+    }
+
+    return result
+  }
+
+  alphaChunk(sortedArr) {
+    let result = []
+    let pos = 0
+
+    for (let i = 0; i <= sortedArr.length; i++) {
+      if (result[pos] === undefined) {
+        result.push([sortedArr[i]])
+        continue
+      }
+
+      let last = result[pos][result[pos].length-1]
+      if (!!last && !!sortedArr[i] && last.title.charAt(0).toLowerCase() === sortedArr[i].title.charAt(0).toLowerCase()) {
+        result[pos].push(sortedArr[i])
+      } else if (!!sortedArr[i]) {
+        result.push([sortedArr[i]])
+        pos++
+      }
     }
 
     return result
