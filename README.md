@@ -4,15 +4,15 @@ Reactjs component for alphabetical sorting.
 #Example
 ## In dev mode
 ```javascript
-npm i
-npm run start
+yarn
+yarn start
 ```
 ## Or see live-demo
 [react-alphabet-sorter](https://elistratovroman.github.io/react-alphabet-sorter/)
 
 #Install
 ```javascript
-npm i react-alphabet-sorter --save
+yarn react-alphabet-sorter --save
 ```
 
 # Usage
