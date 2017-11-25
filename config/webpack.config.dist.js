@@ -16,8 +16,8 @@ module.exports = {
       root: 'React',
       commonjs2: 'react',
       commonjs: 'react',
-      amd: 'react'
-    }
+      amd: 'react',
+    },
   },
 
   module: {

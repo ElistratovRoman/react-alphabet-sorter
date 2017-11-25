@@ -6,7 +6,7 @@ import SorterItem from './SorterItem.js'
 
 import './style.sass'
 
-export default class AlphabetSorter extends React.Component {
+class AlphabetSorter extends React.Component {
   static propTypes = {
     asGroup: PropTypes.array.isRequired,
     selected: PropTypes.array,
@@ -199,3 +199,5 @@ export default class AlphabetSorter extends React.Component {
     )
   }
 }
+
+export default AlphabetSorter

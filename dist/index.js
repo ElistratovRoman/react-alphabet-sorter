@@ -701,6 +701,8 @@ AlphabetSorter.defaultProps = {
   navigator: true
 };
 var _default = AlphabetSorter;
+
+
 /* harmony default export */ __webpack_exports__["default"] = (_default);
 ;
 
