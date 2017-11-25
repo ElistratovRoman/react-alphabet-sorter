@@ -1,10 +1,13 @@
 import React from 'react'
-import { shallow, mount, render } from 'enzyme'
+import Enzyme, { shallow, mount, render } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 import { expect } from 'chai'
 import sinon from 'sinon'
 import jsdom from 'jsdom'
-import AlpabeticalSorter from '../src/index.jsx'
-import SorterItem from '../src/SorterItem.jsx'
+import AlpabeticalSorter from '../src/index.js'
+import SorterItem from '../src/SorterItem.js'
+
+Enzyme.configure({ adapter: new Adapter() })
 
 const data = [
   { href: '#', id: 1, title: 'Audi'},
