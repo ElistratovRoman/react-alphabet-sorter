@@ -21,12 +21,11 @@
   "scripts": {
     "build-dist": "NODE_ENV=production yarn clean-dist && webpack --bail --config config/webpack.config.dist",
     "start": "NODE_ENV=development webpack-dev-server --config config/webpack.config.dev",
-    "build-web": "NODE_ENV=development yarn rimraf web && webpack --bail --config config/webpack.config.web",
+    "build-docs": "NODE_ENV=development yarn rimraf docs && webpack --bail --config config/webpack.config.docs",
     "clean-dist": "rimraf dist",
     "lint": "eslint ./src",
     "test": "NODE_ENV=test NODE_PATH=. mocha -R spec --compilers js:babel-register --require test/misc/null-compiler.js",
     "test-watch": "yarn test -- --watch",
-    "upd-gh-pages": "git checkout gh-pages && git checkout master -- web && git add . && git commit -m 'upd web' && git push && git checkout master",
     "prepublish": "test && yarn clean-dist && yarn build-dist"
   },
   "pre-commit": [
