@@ -26,7 +26,7 @@
     "lint": "eslint ./src",
     "test": "NODE_ENV=test NODE_PATH=. mocha -R spec --compilers js:babel-register --require test/misc/null-compiler.js",
     "test-watch": "yarn test -- --watch",
-    "prepublish": "test && yarn clean-dist && yarn build-dist"
+    "prepublish": "yarn test && yarn clean-dist && yarn build-dist"
   },
   "pre-commit": [
     "lint"
