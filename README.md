@@ -69,4 +69,5 @@ export default class Demo extends React.Component {
   valueKey   | string   | 'value'   | key, which is used to find item value
   navigator  | boolean  | true      | defines whether to show the alphabetical signs
   chunkLength| number   | undefined | defines whether to show the list items or chunks
+  chunkByLetter| boolean | undefined | allow make chunks by letter
   handleCheck| function | undefined | callback, which fires after click or change item. Receives 1 argument: array of selected items
